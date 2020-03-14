@@ -4,21 +4,22 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    //Variavel para definir a velocidade de deslocamento do jogador
-    public float moveSpeed = 20.0f;
-
-    //Variavel pos vai receber posicao do player na cena em x, y e z
+    //Variavel pos vai receber posição do player na cena em x, y z
     private Vector3 pos;
+
+    //Variavel para definir a velicdade que o player vai se movimentar
+    public float moveSpeed = 20.0f;
 
     // Update is called once per frame
     void Update()
     {
+        // A variavel pos vai receber a posição x, y e  do component transform que esta lá na capsula
         pos = transform.position;
 
-        //Vai moviemntar na posição x, o input vai de -1 a 1, tanto para o eixo x quanto para o eixo z, e multipla pelo tempo
-        //Os eixos horizontais e verticais já estão configurados no Input (Edit>Project Settting Input Manager > Axis
+        // Vai movimentar na posição x, o Input vai de -1 a 1, tanto para o eixo x quanto para o eixo z, e multiplica pelo tempo
+        //Os eixos horital e vertical já estão configrados no Input Manager do Unity
         pos.x += moveSpeed * Input.GetAxis("Horizontal") * Time.deltaTime;
-        pos.z += moveSpeed * Input.GetAxis("Vertical") * Time.deltaTime;
+        pos.z += moveSpeed * Input.GetAxis("Vertical") *  Time.deltaTime;
 
         transform.position = pos;
     }
