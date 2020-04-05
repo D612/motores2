@@ -23,6 +23,7 @@ public class MyCharacterController : MonoBehaviour
             moveDir *= vel;
         }
 
+
         //Adicionando a gravidade durante o jogo no personagem
         moveDir.y -= gravidade * Time.deltaTime;
         //Execuntando a função para realizar o movimento com base nos novos valores de entrada recebidos do Input
