@@ -12,5 +12,7 @@ public class MoverBola : MonoBehaviour
     {
         direction = Input.GetAxis("Horizontal") * moveForce;
         transform.GetComponent<Rigidbody2D>().AddForce(new Vector2(direction, 0));
+
     }
+
 }
