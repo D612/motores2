@@ -34,16 +34,19 @@ public class Character : MonoBehaviour
         //Animação
         if (control.isGrounded) {
             //Verificando se meu jogador esta andando
-            if (moveDir.z != 0)
-            {
+            if (moveDir.z != 0){
                 //Animação Walk/Andando
                 anim.SetBool("Parado", false);
-                anim.SetBool("Andando", true);
-            }
-            else {
+                anim.SetBool("Andando", true);   
+            }else {
                 //Animação Idle/Parado
                 anim.SetBool("Parado", true);
                 anim.SetBool("Andando", false);
+                anim.SetBool("AtaqueCurto1", false);
+            }
+
+            if (Input.GetKeyDown(KeyCode.Mouse0)) {
+                anim.SetBool("AtaqueCurto1", true);
             }
         }
     }
